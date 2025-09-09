@@ -359,10 +359,12 @@ const tBody = dashboardTable.querySelector('tbody');
 people.forEach((item) => {
   const age = item.died - item.born;
   const century = Math.ceil(item.died / 100);
+  const gender = item.sex === 'm' ? 'Male' : 'Female';
+
   const tr = document.createElement('tr');
 
   tr.appendChild(createCell(item.name));
-  tr.appendChild(createCell(item.sex));
+  tr.appendChild(createCell(gender));
   tr.appendChild(createCell(item.born));
   tr.appendChild(createCell(item.died));
   tr.appendChild(createCell(age));
